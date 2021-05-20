@@ -1,9 +1,0 @@
-diff a/UnderWater/src/com/model/newsDAO_interface.java b/UnderWater/src/com/model/newsDAO_interface.java	(rejected hunks)
-@@ -2,6 +2,7 @@
- 
- import java.util.List;
- 
-+public interface newsDAO_interface {
-     public void insert(NewsVO newsVO);
-     public void update(NewsVO newsVO);
-     public void delete(NewsVO newsVO);
