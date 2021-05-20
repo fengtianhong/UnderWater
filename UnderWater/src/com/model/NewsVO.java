@@ -1,7 +1,7 @@
 package com.model;
 import java.sql.Date;
 
-public class newsVO implements java.io.Serializable{
+public class NewsVO implements java.io.Serializable{
 	private Integer newsSN;
 	private String title;
 	private String content;

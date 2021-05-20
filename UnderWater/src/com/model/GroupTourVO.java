@@ -3,7 +3,7 @@ package com.model;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class GroupTour {
+public class GroupTourVO {
 	
 	private Integer groupTourSN;
 	private String tourName;

@@ -1,7 +1,7 @@
 package com.model;
 import java.sql.Date;
 
-public class diveInfoVO implements java.io.Serializable{
+public class DiveInfoVO implements java.io.Serializable{
 	private Integer pointSN;
 	private String pointName;
 	private Double latitude;
