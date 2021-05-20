@@ -1,9 +1,9 @@
-package com.model;
+package com.grouptour.model;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class GroupTourVO {
+public class GroupTourVO implements java.io.Serializable{
 	
 	private Integer groupTourSN;
 	private String tourName;

@@ -1,6 +1,6 @@
-package com.model;
+package com.qa.model;
 
-public class QaVO {
+public class QaVO implements java.io.Serializable{
 	
 	private Integer questionSN;
 	private String menu;
