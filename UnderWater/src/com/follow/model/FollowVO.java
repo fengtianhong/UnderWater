@@ -1,6 +1,6 @@
 package com.follow.model;
 
-public class FollowVO {
+public class FollowVO implements java.io.Serializable{
 	private Integer follower;
 	private Integer followed;
 	public Integer getFollower() {

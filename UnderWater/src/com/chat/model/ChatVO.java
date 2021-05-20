@@ -2,7 +2,7 @@ package com.chat.model;
 
 import java.sql.Timestamp;
 
-public class ChatVO {
+public class ChatVO implements java.io.Serializable{
 	private Integer chatSN;
 	private Integer fromAccount;
 	private Integer toAccount;
