@@ -1,4 +1,4 @@
-package com.model;
+package com.news.model;
 import java.sql.Date;
 
 public class NewsVO implements java.io.Serializable{

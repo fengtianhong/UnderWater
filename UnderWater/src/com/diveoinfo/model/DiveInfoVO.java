@@ -1,5 +1,4 @@
-package com.model;
-import java.sql.Date;
+package com.diveoinfo.model;
 
 public class DiveInfoVO implements java.io.Serializable{
 	private Integer pointSN;
@@ -12,6 +11,8 @@ public class DiveInfoVO implements java.io.Serializable{
 	private String local;
 	private byte[] pic;
 	private Integer ratePoint;
+	private Integer ratePeople;
+	private String status;
 	public Integer getPointSN() {
 		return pointSN;
 	}
@@ -84,8 +85,7 @@ public class DiveInfoVO implements java.io.Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private Integer ratePeople;
-	private String status;
+
 	
 	
 	
