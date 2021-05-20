@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.List;
 
-public interface NewsDAO_interface {
+public interface newsDAO_interface {
     public void insert(NewsVO newsVO);
     public void update(NewsVO newsVO);
     public void delete(NewsVO newsVO);
