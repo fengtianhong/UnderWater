@@ -18,7 +18,7 @@ public class GroupTourVO implements java.io.Serializable{
 	private Integer limitNumder;
 	private String certificationLimit;
 	private String status;
-	private Byte[] content;
+	private String content;
 	public Integer getGroupTourSN() {
 		return groupTourSN;
 	}
@@ -97,10 +97,10 @@ public class GroupTourVO implements java.io.Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Byte[] getContent() {
+	public String getContent() {
 		return content;
 	}
-	public void setContent(Byte[] content) {
+	public void setContent(String content) {
 		this.content = content;
 	}
 
