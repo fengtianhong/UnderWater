@@ -9,7 +9,7 @@ public class QaVO implements java.io.Serializable{
 	private String question;
 	private String answer;
 	private Integer clicks;
-	private boolean popularQuestion;
+	private Boolean popularQuestion;
 	private Integer popularQuestionSort;
 	
 	public Integer getQuestionSN() {
@@ -57,7 +57,7 @@ public class QaVO implements java.io.Serializable{
 	public boolean isPopularQuestion() {
 		return popularQuestion;
 	}
-	public void setPopularQuestion(boolean popularQuestion) {
+	public void setPopularQuestion(Boolean popularQuestion) {
 		this.popularQuestion = popularQuestion;
 	}
 	public Integer getPopularQuestionSort() {

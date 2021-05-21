@@ -1,4 +1,4 @@
-package com.diveoinfo.model;
+package com.diveinfo.model;
 
 import java.util.List;
 

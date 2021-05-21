@@ -5,7 +5,7 @@ public class NewsVO implements java.io.Serializable{
 	private Integer newsSN;
 	private String title;
 	private String content;
-	private byte[] image;
+	private Byte[] image;
 	private Date date;
 	private String newsFrom;
 	private char newsType;
@@ -27,10 +27,10 @@ public class NewsVO implements java.io.Serializable{
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public byte[] getImage() {
+	public Byte[] getImage() {
 		return image;
 	}
-	public void setImage(byte[] image) {
+	public void setImage(Byte[] image) {
 		this.image = image;
 	}
 	public Date getDate() {

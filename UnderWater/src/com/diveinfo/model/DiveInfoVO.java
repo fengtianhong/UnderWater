@@ -1,4 +1,4 @@
-package com.diveoinfo.model;
+package com.diveinfo.model;
 
 public class DiveInfoVO implements java.io.Serializable{
 	private Integer pointSN;
@@ -9,7 +9,7 @@ public class DiveInfoVO implements java.io.Serializable{
 	private String introduction;
 	private String season;
 	private String local;
-	private byte[] pic;
+	private Byte[] pic;
 	private Integer ratePoint;
 	private Integer ratePeople;
 	private String status;
@@ -61,10 +61,10 @@ public class DiveInfoVO implements java.io.Serializable{
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	public byte[] getPic() {
+	public Byte[] getPic() {
 		return pic;
 	}
-	public void setPic(byte[] pic) {
+	public void setPic(Byte[] pic) {
 		this.pic = pic;
 	}
 	public Integer getRatePoint() {
