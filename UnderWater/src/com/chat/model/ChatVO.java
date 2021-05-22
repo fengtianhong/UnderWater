@@ -35,7 +35,7 @@ public class ChatVO implements java.io.Serializable{
 	public Timestamp getDateTime() {
 		return dateTime;
 	}
-	public void setDateTime(Timestamp dateTimeTEST) {	//dateeeee
+	public void setDateTime(Timestamp dateTimeTEST) {	// dateeeee
 		this.dateTime = dateTime;
 	}
 
