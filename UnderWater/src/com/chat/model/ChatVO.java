@@ -4,10 +4,10 @@ import java.sql.Timestamp;
 
 public class ChatVO implements java.io.Serializable{
 	private Integer chatSN;			// ´ú¸Õ½Ä¬ð123
-	private Integer fromAccount;		// ´ú¸Õ½Ä¬ð456
+	private Integer fromAccount;
 	private Integer toAccount;
 	private String content;
-    private Timestamp dateTime;	
+    private Timestamp dateTmei;	
     public Integer getChatSN() {
 		return chatSN;
 	}
@@ -32,11 +32,11 @@ public class ChatVO implements java.io.Serializable{
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Timestamp getDateTime() {
-		return dateTime;
+	public Timestamp getDateTmei() {
+		return dateTmei;
 	}
-	public void setDateTime(Timestamp dateTimeTEST) {	// dateeeee
-		this.dateTime = dateTime;
+	public void setDateTmei(Timestamp dateTmei) {	// mergeeee
+		this.dateTmei = dateTmei;
 	}
 
 }
