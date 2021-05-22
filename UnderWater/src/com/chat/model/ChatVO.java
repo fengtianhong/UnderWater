@@ -7,7 +7,7 @@ public class ChatVO implements java.io.Serializable{
 	private Integer fromAccount;
 	private Integer toAccount;
 	private String content;
-	private Timestamp dateTime;
+	private Timestamp dateTmie;
 	public Integer getChatSN() {
 		return chatSN;
 	}
@@ -32,11 +32,17 @@ public class ChatVO implements java.io.Serializable{
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Timestamp getDateTime() {
-		return dateTime;
+//	public Timestamp getDateTime() {
+//		return dateTime;
+//	}
+//	public void setDateTime(Timestamp dateTime) {
+//		this.dateTime = dateTime;
+//	}
+	public Timestamp getDateTmie() {
+		return dateTmie;
 	}
-	public void setDateTime(Timestamp dateTime) {
-		this.dateTime = dateTime;
+	public void setDateTmie(Timestamp dateTmie) {
+		this.dateTmie = dateTmie;
 	}
 
 }
