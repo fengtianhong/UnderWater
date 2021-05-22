@@ -3,8 +3,8 @@ package com.chat.model;
 import java.sql.Timestamp;
 
 public class ChatVO implements java.io.Serializable{
-	private Integer chatSN;
-	private Integer fromAccount;
+	private Integer chatSN;			// ´ú¸Õ½Ä¬ð123
+	private Integer fromAccount;		// ´ú¸Õ½Ä¬ð456
 	private Integer toAccount;
 	private String content;
     private Timestamp dateTime;	
@@ -35,7 +35,7 @@ public class ChatVO implements java.io.Serializable{
 	public Timestamp getDateTime() {
 		return dateTime;
 	}
-	public void setDateTime(Timestamp dateTime) {
+	public void setDateTime(Timestamp dateTimeTEST) {	//dateeeee
 		this.dateTime = dateTime;
 	}
 
