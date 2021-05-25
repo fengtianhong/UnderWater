@@ -35,158 +35,158 @@ DROP TABLE IF EXISTS `Member`;
 
 
 CREATE TABLE `Member` (
-  `userID` int NOT NULL AUTO_INCREMENT COMMENT '·|­û½s¸¹',
-  `account` varchar(50) NOT NULL COMMENT '±b¸¹',
-  `pwd` varchar(20) NOT NULL COMMENT '±K½X',
-  `nickName` varchar(30) NOT NULL COMMENT '¼ÊºÙ',
-  `userName` varchar(50) NOT NULL COMMENT '©m¦W',
-  `gender` varchar(1) DEFAULT NULL COMMENT '©Ê§O',
-  `birthDate` date DEFAULT NULL COMMENT '·|­û¥Í¤é',
-  `phone` varchar(10) DEFAULT NULL COMMENT 'Ápµ¸¹q¸Ü',
-  `certification` char(2) DEFAULT NULL COMMENT 'ÃÒ·Ó',
-  `certificationPic` blob COMMENT 'ÃÒ·Ó¹Ï¤ù',
-  `personID` char(10) DEFAULT NULL COMMENT '¨­¥÷ÃÒ¦r¸¹',
-  `address` varchar(100) DEFAULT NULL COMMENT '¦a§}',
-  `createTime` timestamp NOT NULL COMMENT '±b¸¹«Ø¥ß®É¶¡',
-  `status` int NOT NULL COMMENT '±b¸¹ª¬ºA',
-  `upDateTime` timestamp NOT NULL COMMENT '±b¸¹§ó·s®É¶¡',
-  `ratePeople` int NOT NULL COMMENT '³Qµû»ùÁ`¤H¼Æ',
-  `ratePoint` int NOT NULL COMMENT '³Qµû»ùÁ`¤À',
+  `userID` int NOT NULL AUTO_INCREMENT COMMENT 'æœƒå“¡ç·¨è™Ÿ',
+  `account` varchar(50) NOT NULL COMMENT 'å¸³è™Ÿ',
+  `pwd` varchar(20) NOT NULL COMMENT 'å¯†ç¢¼',
+  `nickName` varchar(30) NOT NULL COMMENT 'æš±ç¨±',
+  `userName` varchar(50) NOT NULL COMMENT 'å§“å',
+  `gender` varchar(1) DEFAULT NULL COMMENT 'æ€§åˆ¥',
+  `birthDate` date DEFAULT NULL COMMENT 'æœƒå“¡ç”Ÿæ—¥',
+  `phone` varchar(10) DEFAULT NULL COMMENT 'è¯çµ¡é›»è©±',
+  `certification` char(2) DEFAULT NULL COMMENT 'è­‰ç…§',
+  `certificationPic` blob COMMENT 'è­‰ç…§åœ–ç‰‡',
+  `personID` char(10) DEFAULT NULL COMMENT 'èº«ä»½è­‰å­—è™Ÿ',
+  `address` varchar(100) DEFAULT NULL COMMENT 'åœ°å€',
+  `createTime` timestamp NOT NULL COMMENT 'å¸³è™Ÿå»ºç«‹æ™‚é–“',
+  `status` int NOT NULL COMMENT 'å¸³è™Ÿç‹€æ…‹',
+  `upDateTime` timestamp NOT NULL COMMENT 'å¸³è™Ÿæ›´æ–°æ™‚é–“',
+  `ratePeople` int NOT NULL COMMENT 'è¢«è©•åƒ¹ç¸½äººæ•¸',
+  `ratePoint` int NOT NULL COMMENT 'è¢«è©•åƒ¹ç¸½åˆ†',
   PRIMARY KEY (`userID`),
   UNIQUE KEY `UK_MEMBER_account` (`account`)
-) COMMENT='·|­û';
+) COMMENT='æœƒå“¡';
 
 
 
 CREATE TABLE `Diveinfo` (
-  `pointSN` int NOT NULL AUTO_INCREMENT COMMENT '¼çÂI½s¸¹',
+  `pointSN` int NOT NULL AUTO_INCREMENT COMMENT 'æ½›é»ç·¨è™Ÿ',
   `pointName` varchar(20) DEFAULT NULL,
-  `latitude` double NOT NULL COMMENT '½n«×',
-  `longitude` double NOT NULL COMMENT '¸g«×',
+  `latitude` double NOT NULL COMMENT 'ç·¯åº¦',
+  `longitude` double NOT NULL COMMENT 'ç¶“åº¦',
   `view` varchar(20) DEFAULT NULL,
-  `introduction` longtext NOT NULL COMMENT '¼çÂI¹Ï¤å',
-  `season` varchar(20) NOT NULL COMMENT '©u¸`',
+  `introduction` longtext NOT NULL COMMENT 'æ½›é»åœ–æ–‡',
+  `season` varchar(20) NOT NULL COMMENT 'å­£ç¯€',
   `local` varchar(20) DEFAULT NULL,
-  `pic` blob NOT NULL COMMENT '¹wÄı¹Ï',
-  `ratePoint` int NOT NULL COMMENT 'µû»ùÁ`¤À',
-  `ratePeople` int NOT NULL COMMENT 'µû»ù¤H¼Æ',
+  `pic` blob NOT NULL COMMENT 'é è¦½åœ–',
+  `ratePoint` int NOT NULL COMMENT 'è©•åƒ¹ç¸½åˆ†',
+  `ratePeople` int NOT NULL COMMENT 'è©•åƒ¹äººæ•¸',
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`pointSN`)
-) COMMENT='¼çÂI¸ê°T' AUTO_INCREMENT = 200001;
+) COMMENT='æ½›é»è³‡è¨Š' AUTO_INCREMENT = 200001;
 
 
--- --------------------------------------®M¸Ë¦æµ{----------------------------------------
+-- --------------------------------------å¥—è£è¡Œç¨‹----------------------------------------
 
 
 create table `GroupTour` (
-	`groupTourSN` int NOT NULL AUTO_INCREMENT COMMENT '®M¸Ë¦æµ{½s¸¹',
-    `tourName` varchar(30) not null comment '¦æµ{¦WºÙ',
-    `startTime` date not null comment '¦æµ{°_©l¤é´Á',
-    `endTime` date not null comment '¦æµ{µ²§ô¤é´Á',
-    `regTime` date not null comment '³ø¦W¶}©l¤é´Á',
-    `closeTime` date not null comment '³ø¦Wµ²§ô¤é´Á',
-    `createTime` TIMESTAMP NOT NULL comment '¦æµ{«Ø¥ß¤é´Á',
-    `pointSN` int not null comment '¼çÂI½s¸¹',
-    `price` int not null comment '¦æµ{»ù®æ',
-    `attendNumber` int not null comment '°Ñ¥[¤H¼Æ',
-    `limitNumder` int not null comment '­­¨î¤H¼Æ',
-    `certificationLimit` char(2) comment '¸ê®æ­­¨î',
-    `status` char(1) not null comment '¥X¹Îª¬ºA',
-    `content` longtext not null comment '¦æµ{¹Ï¤å',
+	`groupTourSN` int NOT NULL AUTO_INCREMENT COMMENT 'å¥—è£è¡Œç¨‹ç·¨è™Ÿ',
+    `tourName` varchar(30) not null comment 'è¡Œç¨‹åç¨±',
+    `startTime` date not null comment 'è¡Œç¨‹èµ·å§‹æ—¥æœŸ',
+    `endTime` date not null comment 'è¡Œç¨‹çµæŸæ—¥æœŸ',
+    `regTime` date not null comment 'å ±åé–‹å§‹æ—¥æœŸ',
+    `closeTime` date not null comment 'å ±åçµæŸæ—¥æœŸ',
+    `createTime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP comment 'è¡Œç¨‹å»ºç«‹æ—¥æœŸ',
+    `pointSN` int not null comment 'æ½›é»ç·¨è™Ÿ',
+    `price` int not null comment 'è¡Œç¨‹åƒ¹æ ¼',
+    `attendNumber` int not null comment 'åƒåŠ äººæ•¸',
+    `limitNumder` int not null comment 'é™åˆ¶äººæ•¸',
+    `certificationLimit` char(2) comment 'è³‡æ ¼é™åˆ¶',
+    `status` char(1) not null comment 'å‡ºåœ˜ç‹€æ…‹',
+    `content` longtext not null comment 'è¡Œç¨‹åœ–æ–‡',
 	CONSTRAINT GroupTour_pontSN_FK FOREIGN KEY (pointSN) REFERENCES DiveInfo (pointSN),
 	PRIMARY KEY (`groupTourSN`)
-) COMMENT='®M¸Ë¦æµ{' AUTO_INCREMENT=6001;
+) COMMENT='å¥—è£è¡Œç¨‹' AUTO_INCREMENT=6001;
 
 
 create table `Collections` (
-	`userID` int not null comment '·|­û½s¸¹',
-    `groupTourSN` int not null comment '®M¸Ë¦æµ{½s¸¹',
+	`userID` int not null comment 'æœƒå“¡ç·¨è™Ÿ',
+    `groupTourSN` int not null comment 'å¥—è£è¡Œç¨‹ç·¨è™Ÿ',
     CONSTRAINT Collections_userID_FK FOREIGN KEY (userID) REFERENCES Member (userID),
     CONSTRAINT Collections_groupTourSN_FK FOREIGN KEY (groupTourSN) REFERENCES GroupTour (groupTourSN)
-) COMMENT='®M¸Ë¦æµ{¦¬ÂÃ';
+) COMMENT='å¥—è£è¡Œç¨‹æ”¶è—';
 
 
 create table `OderForGroup` (
-	`orderSN` int NOT NULL AUTO_INCREMENT COMMENT '®M¸Ë¦æµ{­q³æ½s¸¹',
-	`userID` int not null comment '·|­û½s¸¹',
-    `groupTourSN` int not null comment '®M¸Ë¦æµ{½s¸¹',
-    `totalPrice` int not null comment '­q³æÁ`ÃB',
-	`purchaseDate`  date not null comment 'ÁÊ¶R¤é´Á',
-    `phone` varchar(10) not null comment '¤â¾÷',
-    `personID` char(10) not null comment '¨­¤ÀÃÒ¸¹',
-    `birthdate` date not null comment '·|­û¥Í¤é',
+	`orderSN` int NOT NULL AUTO_INCREMENT COMMENT 'å¥—è£è¡Œç¨‹è¨‚å–®ç·¨è™Ÿ',
+	`userID` int not null comment 'æœƒå“¡ç·¨è™Ÿ',
+    `groupTourSN` int not null comment 'å¥—è£è¡Œç¨‹ç·¨è™Ÿ',
+    `totalPrice` int not null comment 'è¨‚å–®ç¸½é¡',
+	`purchaseDate`  date not null comment 'è³¼è²·æ—¥æœŸ',
+    `phone` varchar(10) not null comment 'æ‰‹æ©Ÿ',
+    `personID` char(10) not null comment 'èº«åˆ†è­‰è™Ÿ',
+    `birthdate` date not null comment 'æœƒå“¡ç”Ÿæ—¥',
      CONSTRAINT OderForGroup_userID_FK FOREIGN KEY (userID) REFERENCES Member (userID),
      CONSTRAINT OderForGroup_groupTourSN_FK FOREIGN KEY (groupTourSN) REFERENCES GroupTour (groupTourSN),
 	  PRIMARY KEY (`orderSN`)
-) COMMENT='®M¸Ë¦æµ{­q³æ' AUTO_INCREMENT=6001;
+) COMMENT='å¥—è£è¡Œç¨‹è¨‚å–®' AUTO_INCREMENT=6001;
 
 
 create table `LocationRate` (
-	`SN` int NOT NULL AUTO_INCREMENT COMMENT '¼çÂIµû»ù½s¸¹',
-    `pointSN` int not null comment '¼çÂI½s¸¹',
-	`userID` int not null comment 'µû»ù¤è',
-    `rate` int comment 'µû»ù',
-    `rateDetail` varchar(1000) comment 'µû»ù¸Ô²Ó¤º®e',
-    `createTime` timestamp not null comment 'µû»ù®É¶¡',
+	`SN` int NOT NULL AUTO_INCREMENT COMMENT 'æ½›é»è©•åƒ¹ç·¨è™Ÿ',
+    `pointSN` int not null comment 'æ½›é»ç·¨è™Ÿ',
+	`userID` int not null comment 'è©•åƒ¹æ–¹',
+    `rate` int comment 'è©•åƒ¹',
+    `rateDetail` varchar(1000) comment 'è©•åƒ¹è©³ç´°å…§å®¹',
+    `createTime` timestamp not null DEFAULT CURRENT_TIMESTAMP comment 'è©•åƒ¹æ™‚é–“',
 	CONSTRAINT LocationRate_pontSN_FK FOREIGN KEY (pointSN) REFERENCES DiveInfo (pointSN),
 	CONSTRAINT LocationRate_userID_FK FOREIGN KEY (userID) REFERENCES Member (userID),
 	  PRIMARY KEY (`SN`)
-) COMMENT='¦aÂIµû»ù¸ê®Æ' AUTO_INCREMENT=6001;
+) COMMENT='åœ°é»è©•åƒ¹è³‡æ–™' AUTO_INCREMENT=6001;
 
 
--- --------------------------------------´ª¹Î----------------------------------------
+-- --------------------------------------æªåœ˜----------------------------------------
 
 CREATE TABLE `Party` (
-  `partySN` int NOT NULL AUTO_INCREMENT COMMENT '´ª¹Î½s¸¹',
-  `partyHost` int NOT NULL COMMENT '¥D´ª·|­û½s¸¹',
-  `partyTitle` varchar(100) NOT NULL COMMENT '´ª¹Î¥D¦®',
-  `regDate` date NOT NULL COMMENT '³ø¦W¶}©l®É¶¡',
-  `closeDate` date NOT NULL COMMENT '³ø¦Wµ²§ô®É¶¡',
-  `startDate` date NOT NULL COMMENT '¦¹¹Î¶}©l®É¶¡',
-  `endDate` date NOT NULL COMMENT '¦¹¹Îµ²§ô®É¶¡',
-  `partyMinSize` int NOT NULL COMMENT '´ª¹Î³Ì§C¤H¼Æ',
-  `partyLocation` int NOT NULL COMMENT '´ª¹Î¦aÂI',
-  `partyDetail` longtext NOT NULL COMMENT '´ª¹Î¸Ô²Ó¤º®e',
-  `createTime` timestamp NOT NULL COMMENT '´ª¹Îµo¤å®É¶¡',
-  `status` char(1) NOT NULL COMMENT '´ª¹Îª¬ºA',
+  `partySN` int NOT NULL AUTO_INCREMENT COMMENT 'æªåœ˜ç·¨è™Ÿ',
+  `partyHost` int NOT NULL COMMENT 'ä¸»æªæœƒå“¡ç·¨è™Ÿ',
+  `partyTitle` varchar(100) NOT NULL COMMENT 'æªåœ˜ä¸»æ—¨',
+  `regDate` date NOT NULL COMMENT 'å ±åé–‹å§‹æ™‚é–“',
+  `closeDate` date NOT NULL COMMENT 'å ±åçµæŸæ™‚é–“',
+  `startDate` date NOT NULL COMMENT 'æ­¤åœ˜é–‹å§‹æ™‚é–“',
+  `endDate` date NOT NULL COMMENT 'æ­¤åœ˜çµæŸæ™‚é–“',
+  `partyMinSize` int NOT NULL COMMENT 'æªåœ˜æœ€ä½äººæ•¸',
+  `partyLocation` int NOT NULL COMMENT 'æªåœ˜åœ°é»',
+  `partyDetail` longtext NOT NULL COMMENT 'æªåœ˜è©³ç´°å…§å®¹',
+  `createTime` timestamp NOT NULL COMMENT 'æªåœ˜ç™¼æ–‡æ™‚é–“',
+  `status` char(1) NOT NULL COMMENT 'æªåœ˜ç‹€æ…‹',
   PRIMARY KEY (`partySN`),
   KEY `FK_Party_partyHost` (`partyHost`),
   KEY `FK_Party_partyLocation` (`partyLocation`),
   CONSTRAINT `FK_Party_partyHost` FOREIGN KEY (`partyHost`) REFERENCES `Member` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_Party_partyLocation` FOREIGN KEY (`partyLocation`) REFERENCES `DiveInfo` (`pointSN`) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT='´ª¹Î¦Cªí';
+) COMMENT='æªåœ˜åˆ—è¡¨';
 
 
 CREATE TABLE `PartyMember` (
-  `partyMemberSN` int NOT NULL AUTO_INCREMENT COMMENT '´ª¹Î¹Î­û¦W³æ¬y¤ô¸¹',
-  `partySN` int NOT NULL COMMENT '´ª¹Î½s¸¹',
-  `partyMember` int NOT NULL COMMENT '¹Î­û·|­û½s¸¹',
-  `gender` varchar(1) NOT NULL COMMENT '©Ê§O 0:¨k 1:¤k',
+  `partyMemberSN` int NOT NULL AUTO_INCREMENT COMMENT 'æªåœ˜åœ˜å“¡åå–®æµæ°´è™Ÿ',
+  `partySN` int NOT NULL COMMENT 'æªåœ˜ç·¨è™Ÿ',
+  `partyMember` int NOT NULL COMMENT 'åœ˜å“¡æœƒå“¡ç·¨è™Ÿ',
+  `gender` varchar(1) NOT NULL COMMENT 'æ€§åˆ¥ 0:ç”· 1:å¥³',
   `email` varchar(50) NOT NULL COMMENT 'Email',
-  `phone` varchar(10) NOT NULL COMMENT '¤â¾÷',
-  `birthDate` date NOT NULL COMMENT '¥Í¤é',
-  `personID` char(10) NOT NULL COMMENT '¨­¥÷ÃÒ¦r¸¹',
-  `certificationPic` longblob COMMENT 'ÃÒ·Ó¹Ï¤ù',
-  `appliedDate` timestamp NOT NULL COMMENT '³ø¦W¤é´Á',
-  `comment` varchar(1000) DEFAULT NULL COMMENT '³Æµù',
-  `status` int NOT NULL COMMENT '³ø¦Wª¬ºA 0:«İ¼f®Ö 1:¼f®Ö³q¹L 2:¼f®Ö¥¼³q¹L',
+  `phone` varchar(10) NOT NULL COMMENT 'æ‰‹æ©Ÿ',
+  `birthDate` date NOT NULL COMMENT 'ç”Ÿæ—¥',
+  `personID` char(10) NOT NULL COMMENT 'èº«ä»½è­‰å­—è™Ÿ',
+  `certificationPic` longblob COMMENT 'è­‰ç…§åœ–ç‰‡',
+  `appliedDate` timestamp NOT NULL COMMENT 'å ±åæ—¥æœŸ',
+  `comment` varchar(1000) DEFAULT NULL COMMENT 'å‚™è¨»',
+  `status` int NOT NULL COMMENT 'å ±åç‹€æ…‹ 0:å¾…å¯©æ ¸ 1:å¯©æ ¸é€šé 2:å¯©æ ¸æœªé€šé',
   PRIMARY KEY (`partyMemberSN`),
   UNIQUE KEY `UK_PartyMember_partySN_partyMember` (`partySN`,`partyMember`),
   KEY `FK_PartyMember_partyMember` (`partyMember`),
   CONSTRAINT `FK_PartyMember_partyMember` FOREIGN KEY (`partyMember`) REFERENCES `Member` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_PartyMember_partySN` FOREIGN KEY (`partySN`) REFERENCES `Party` (`partySN`) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT='´ª¹Î¹Î­û¦W³æ';
+) COMMENT='æªåœ˜åœ˜å“¡åå–®';
 
 
 CREATE TABLE `MemberRate` (
-  `SN` int NOT NULL AUTO_INCREMENT COMMENT '·|­ûµû»ù¬y¤ô½s¸¹',
-  `partySN` int DEFAULT NULL COMMENT '´ª¹Î½s¸¹',
-  `orderSN` int DEFAULT NULL COMMENT '®M¸Ë¦æµ{­q³æ½s¸¹',
-  `rateMaker` int NOT NULL COMMENT 'µû½×¤è',
-  `rateRecipiant` int NOT NULL COMMENT '³Qµû½×¤è',
-  `rate` int NOT NULL COMMENT 'µû»ù',
-  `rateDetail` varchar(3000) DEFAULT NULL COMMENT 'µû»ù¸Ô²Ó¤º®e',
-  `createTime` timestamp NOT NULL COMMENT 'µû»ù®É¶¡',
+  `SN` int NOT NULL AUTO_INCREMENT COMMENT 'æœƒå“¡è©•åƒ¹æµæ°´ç·¨è™Ÿ',
+  `partySN` int DEFAULT NULL COMMENT 'æªåœ˜ç·¨è™Ÿ',
+  `orderSN` int DEFAULT NULL COMMENT 'å¥—è£è¡Œç¨‹è¨‚å–®ç·¨è™Ÿ',
+  `rateMaker` int NOT NULL COMMENT 'è©•è«–æ–¹',
+  `rateRecipiant` int NOT NULL COMMENT 'è¢«è©•è«–æ–¹',
+  `rate` int NOT NULL COMMENT 'è©•åƒ¹',
+  `rateDetail` varchar(3000) DEFAULT NULL COMMENT 'è©•åƒ¹è©³ç´°å…§å®¹',
+  `createTime` timestamp NOT NULL COMMENT 'è©•åƒ¹æ™‚é–“',
   PRIMARY KEY (`SN`),
   KEY `FK_MemberRate_partySN` (`partySN`),
   KEY `FK_MemberRate_orderSN` (`orderSN`),
@@ -196,67 +196,67 @@ CREATE TABLE `MemberRate` (
   CONSTRAINT `FK_MemberRate_partySN` FOREIGN KEY (`partySN`) REFERENCES `Party` (`partySN`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_rateMaker` FOREIGN KEY (`rateMaker`) REFERENCES `Member` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_rateRecipiant` FOREIGN KEY (`rateRecipiant`) REFERENCES `Member` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT='·|­ûµû»ù';
+) COMMENT='æœƒå“¡è©•åƒ¹';
 
 
--- --------------------------------------°Ó«°¬ÛÃöªí®æ----------------------------------------
+-- --------------------------------------å•†åŸç›¸é—œè¡¨æ ¼----------------------------------------
 
 
 CREATE TABLE `Product` (
-  `productSN` int NOT NULL AUTO_INCREMENT COMMENT '°Ó«~½s¸¹',
-  `productClass` varchar(2) NOT NULL COMMENT '°Ó«~Ãş§O',
-  `productName` varchar(50) NOT NULL COMMENT '°Ó«~¦WºÙ',
-  `productPrice` int NOT NULL COMMENT '°Ó«~³æ»ù',
-  `productQuantity` int NOT NULL COMMENT '°Ó«~¼Æ¶q',
-  `productStatus` char(1) NOT NULL COMMENT '°Ó«~ª¬ºA',
-  `productDetail` longtext NOT NULL COMMENT '°Ó«~»¡©ú',
-  `productCreateTime` timestamp NOT NULL COMMENT '¤W¬[®É¶¡',
-  `productDiscount` tinyint(1) NOT NULL COMMENT 'Àu´f«~',
-  `productPrime` tinyint(1) NOT NULL COMMENT 'ºë¿ï«~',
-  `ratingPoint` int NOT NULL COMMENT 'µû»ùÁ`¤À¼Æ',
-  `ratingNumber` int NOT NULL COMMENT 'µû»ùÁ`¤H¼Æ',
+  `productSN` int NOT NULL AUTO_INCREMENT COMMENT 'å•†å“ç·¨è™Ÿ',
+  `productClass` varchar(2) NOT NULL COMMENT 'å•†å“é¡åˆ¥',
+  `productName` varchar(50) NOT NULL COMMENT 'å•†å“åç¨±',
+  `productPrice` int NOT NULL COMMENT 'å•†å“å–®åƒ¹',
+  `productQuantity` int NOT NULL COMMENT 'å•†å“æ•¸é‡',
+  `productStatus` char(1) NOT NULL COMMENT 'å•†å“ç‹€æ…‹',
+  `productDetail` longtext NOT NULL COMMENT 'å•†å“èªªæ˜',
+  `productCreateTime` timestamp NOT NULL COMMENT 'ä¸Šæ¶æ™‚é–“',
+  `productDiscount` tinyint(1) NOT NULL COMMENT 'å„ªæƒ å“',
+  `productPrime` tinyint(1) NOT NULL COMMENT 'ç²¾é¸å“',
+  `ratingPoint` int NOT NULL COMMENT 'è©•åƒ¹ç¸½åˆ†æ•¸',
+  `ratingNumber` int NOT NULL COMMENT 'è©•åƒ¹ç¸½äººæ•¸',
   PRIMARY KEY (`productSN`),
   CONSTRAINT `product_chk_1` CHECK ((`productPrice` > 0))
-) COMMENT='°Ó«~';
+) COMMENT='å•†å“';
 
 
 CREATE TABLE `OrderForProduct` (
-  `orderSN` int NOT NULL AUTO_INCREMENT COMMENT '­q³æ½s¸¹',
-  `userID` int NOT NULL COMMENT '·|­û½s¸¹',
-  `purchaseDate` timestamp NOT NULL COMMENT 'ÁÊ¶R®É¶¡',
-  `totalPrice` int NOT NULL COMMENT 'µ²±bÁ`ª÷ÃB',
-  `orderStatus` char(1) NOT NULL COMMENT '­q³æª¬ºA',
-  `clearDate` timestamp NULL DEFAULT NULL COMMENT '§¹¦¨®É¶¡',
+  `orderSN` int NOT NULL AUTO_INCREMENT COMMENT 'è¨‚å–®ç·¨è™Ÿ',
+  `userID` int NOT NULL COMMENT 'æœƒå“¡ç·¨è™Ÿ',
+  `purchaseDate` timestamp NOT NULL COMMENT 'è³¼è²·æ™‚é–“',
+  `totalPrice` int NOT NULL COMMENT 'çµå¸³ç¸½é‡‘é¡',
+  `orderStatus` char(1) NOT NULL COMMENT 'è¨‚å–®ç‹€æ…‹',
+  `clearDate` timestamp NULL DEFAULT NULL COMMENT 'å®Œæˆæ™‚é–“',
   PRIMARY KEY (`orderSN`),
   KEY `FK_OrderForProduct_userID` (`userID`),
   CONSTRAINT `FK_OrderForProduct_userID` FOREIGN KEY (`userID`) REFERENCES `Member` (`userID`),
   CONSTRAINT `orderforproduct_chk_1` CHECK ((`totalPrice` > 0))
-) COMMENT='°Ó«~­q³æ';
+) COMMENT='å•†å“è¨‚å–®';
 
 
 CREATE TABLE `OrderList` (
-  `orderListSN` int NOT NULL AUTO_INCREMENT COMMENT '©ú²Ó¬y¤ô¸¹',
-  `productSN` int NOT NULL COMMENT '°Ó«~½s¸¹',
-  `orderSN` int NOT NULL COMMENT '­q³æ½s¸¹',
-  `purchaseQuantity` int NOT NULL COMMENT 'ÁÊ¶R¼Æ¶q',
-  `productPrice` int NOT NULL COMMENT '°Ó«~³æ»ù',
-  `rating` int NOT NULL COMMENT '°Ó«~µû»ù',
+  `orderListSN` int NOT NULL AUTO_INCREMENT COMMENT 'æ˜ç´°æµæ°´è™Ÿ',
+  `productSN` int NOT NULL COMMENT 'å•†å“ç·¨è™Ÿ',
+  `orderSN` int NOT NULL COMMENT 'è¨‚å–®ç·¨è™Ÿ',
+  `purchaseQuantity` int NOT NULL COMMENT 'è³¼è²·æ•¸é‡',
+  `productPrice` int NOT NULL COMMENT 'å•†å“å–®åƒ¹',
+  `rating` int NOT NULL COMMENT 'å•†å“è©•åƒ¹',
   PRIMARY KEY (`orderListSN`),
   KEY `FK_OrderList_productSN` (`productSN`),
   KEY `FK_OrderList_OrderSN` (`orderSN`),
   CONSTRAINT `FK_OrderList_OrderSN` FOREIGN KEY (`orderSN`) REFERENCES `OrderForProduct` (`orderSN`),
   CONSTRAINT `FK_OrderList_productSN` FOREIGN KEY (`productSN`) REFERENCES `Product` (`productSN`),
   CONSTRAINT `orderlist_chk_1` CHECK ((`productPrice` > 0))
-) COMMENT='°Ó«~­q³æ©ú²Ó';
+) COMMENT='å•†å“è¨‚å–®æ˜ç´°';
 
 
 CREATE TABLE `ShoppingCar` (
-  `shoppingCarSN` int NOT NULL AUTO_INCREMENT COMMENT 'ÁÊª«¨®½s¸¹',
-  `userID` int NOT NULL COMMENT '·|­û½s¸¹',
-  `productSN` int NOT NULL COMMENT '°Ó«~½s¸¹',
-  `purchaseQuantity` int NOT NULL COMMENT 'ÁÊ¶R¼Æ¶q',
-  `productPrice` int NOT NULL COMMENT '°Ó«~³æ»ù',
-  `totalPrice` int NOT NULL COMMENT 'µ²±bÁ`ª÷ÃB',
+  `shoppingCarSN` int NOT NULL AUTO_INCREMENT COMMENT 'è³¼ç‰©è»Šç·¨è™Ÿ',
+  `userID` int NOT NULL COMMENT 'æœƒå“¡ç·¨è™Ÿ',
+  `productSN` int NOT NULL COMMENT 'å•†å“ç·¨è™Ÿ',
+  `purchaseQuantity` int NOT NULL COMMENT 'è³¼è²·æ•¸é‡',
+  `productPrice` int NOT NULL COMMENT 'å•†å“å–®åƒ¹',
+  `totalPrice` int NOT NULL COMMENT 'çµå¸³ç¸½é‡‘é¡',
   PRIMARY KEY (`shoppingCarSN`),
   KEY `FK_ShoppingCar_userID` (`userID`),
   KEY `FK_ShoppingCar_productSN` (`productSN`),
@@ -264,132 +264,132 @@ CREATE TABLE `ShoppingCar` (
   CONSTRAINT `FK_ShoppingCar_userID` FOREIGN KEY (`userID`) REFERENCES `Member` (`userID`),
   CONSTRAINT `shoppingcar_chk_1` CHECK ((`productPrice` > 0)),
   CONSTRAINT `shoppingcar_chk_2` CHECK ((`totalPrice` > 0))
-) COMMENT='ÁÊª«¨®';
+) COMMENT='è³¼ç‰©è»Š';
 
 
 CREATE TABLE `ProductPhoto` (
-  `photoSN` int NOT NULL AUTO_INCREMENT COMMENT '¹Ï¤ù¬y¤ô¸¹',
-  `productSN` int NOT NULL COMMENT '°Ó«~½s¸¹',
-  `productImages` longblob NOT NULL COMMENT '°Ó«~¹Ï¤ù',
+  `photoSN` int NOT NULL AUTO_INCREMENT COMMENT 'åœ–ç‰‡æµæ°´è™Ÿ',
+  `productSN` int NOT NULL COMMENT 'å•†å“ç·¨è™Ÿ',
+  `productImages` longblob NOT NULL COMMENT 'å•†å“åœ–ç‰‡',
   PRIMARY KEY (`photoSN`),
   KEY `FK_ProductPhoto_productSN` (`productSN`),
   CONSTRAINT `FK_ProductPhoto_productSN` FOREIGN KEY (`productSN`) REFERENCES `Product` (`productSN`)
-) COMMENT='°Ó«~¹Ï¤ù';
+) COMMENT='å•†å“åœ–ç‰‡';
 
 
--- --------------------------------------·|­û¬ÛÃöªí®æ CustomerReply Follow Chat----------------------------------------
+-- --------------------------------------æœƒå“¡ç›¸é—œè¡¨æ ¼ CustomerReply Follow Chat----------------------------------------
 
 
 create table `CustomerReply` (
-	`customerReplySN` int not null AUTO_INCREMENT comment '°T®§¦^ÂĞ½s¸¹',
-	`userID` int not null comment '·|­û½s¸¹',
-    `type` char(1) not null comment 'Ãş«¬',
-    `content` varchar(500) not null comment '¦^À³¤º®e',
-    `sendTime` timestamp not null comment '°T®§¶Ç°e®É¶¡',
+	`customerReplySN` int not null AUTO_INCREMENT comment 'è¨Šæ¯å›è¦†ç·¨è™Ÿ',
+	`userID` int not null comment 'æœƒå“¡ç·¨è™Ÿ',
+    `type` char(1) not null comment 'é¡å‹',
+    `content` varchar(500) not null comment 'å›æ‡‰å…§å®¹',
+    `sendTime` timestamp not null comment 'è¨Šæ¯å‚³é€æ™‚é–“',
      CONSTRAINT CustomerReply_userID_FK FOREIGN KEY (userID) REFERENCES Member (userID),
 	  PRIMARY KEY (`customerReplySN`)
-) COMMENT='§Y®É«ÈªA¦^À³' AUTO_INCREMENT=60001;
+) COMMENT='å³æ™‚å®¢æœå›æ‡‰' AUTO_INCREMENT=60001;
 
 
 CREATE TABLE `Follow` (
-  `follower` int NOT NULL COMMENT '°lÂÜªÌ½s¸¹',
-  `followed` int NOT NULL COMMENT '³Q°lÂÜªÌ½s¸¹',
+  `follower` int NOT NULL COMMENT 'è¿½è¹¤è€…ç·¨è™Ÿ',
+  `followed` int NOT NULL COMMENT 'è¢«è¿½è¹¤è€…ç·¨è™Ÿ',
   PRIMARY KEY (`follower`,`followed`),
   KEY `FK_Follow_followed` (`followed`),
   CONSTRAINT `FK_Follow_followed` FOREIGN KEY (`followed`) REFERENCES `member` (`userID`),
   CONSTRAINT `FK_Follow_follower` FOREIGN KEY (`follower`) REFERENCES `member` (`userID`)
-) COMMENT='°lÂÜ';
+) COMMENT='è¿½è¹¤';
 
 
 CREATE TABLE `Chat` (
-  `chatSN` int NOT NULL AUTO_INCREMENT COMMENT '²á¤Ñ¬ö¿ı½s¸¹',
-  `fromAccount` int NOT NULL COMMENT ' µo°e½s¸¹',
-  `toAccount` int NOT NULL COMMENT '±µ¨ü½s¸¹',
-  `content` varchar(256) NOT NULL COMMENT '¤º®e',
-  `dateTime` timestamp NOT NULL COMMENT '®É¶¡',
+  `chatSN` int NOT NULL AUTO_INCREMENT COMMENT 'èŠå¤©ç´€éŒ„ç·¨è™Ÿ',
+  `fromAccount` int NOT NULL COMMENT ' ç™¼é€ç·¨è™Ÿ',
+  `toAccount` int NOT NULL COMMENT 'æ¥å—ç·¨è™Ÿ',
+  `content` varchar(256) NOT NULL COMMENT 'å…§å®¹',
+  `dateTime` timestamp NOT NULL COMMENT 'æ™‚é–“',
   PRIMARY KEY (`chatSN`),
   KEY `FK_Chat_fromAccount` (`fromAccount`),
   KEY `FK_Chat_toAccount` (`toAccount`),
   CONSTRAINT `FK_Chat_fromAccount` FOREIGN KEY (`fromAccount`) REFERENCES `member` (`userID`),
   CONSTRAINT `FK_Chat_toAccount` FOREIGN KEY (`toAccount`) REFERENCES `member` (`userID`)
-) COMMENT='²á¤Ñ¬ö¿ı' AUTO_INCREMENT=900001;
+) COMMENT='èŠå¤©ç´€éŒ„' AUTO_INCREMENT=900001;
 
 
 -- --------------------------------------AD----------------------------------------
 
 
 CREATE TABLE `AdMember` (
-  `adUserID` int NOT NULL AUTO_INCREMENT COMMENT '·|­û¬y¤ô½s¸¹',
-  `account` varchar(50) NOT NULL COMMENT '±b¸¹',
-  `pwd` varchar(20) NOT NULL COMMENT '±K½X',
-  `createTime` timestamp NOT NULL COMMENT '±b¸¹«Ø¥ß®É¶¡',
+  `adUserID` int NOT NULL AUTO_INCREMENT COMMENT 'æœƒå“¡æµæ°´ç·¨è™Ÿ',
+  `account` varchar(50) NOT NULL COMMENT 'å¸³è™Ÿ',
+  `pwd` varchar(20) NOT NULL COMMENT 'å¯†ç¢¼',
+  `createTime` timestamp NOT NULL COMMENT 'å¸³è™Ÿå»ºç«‹æ™‚é–“',
   PRIMARY KEY (`adUserID`),
   UNIQUE KEY `UK_AdMember_account` (`account`)
-) COMMENT='¼s§i·|­û';
+) COMMENT='å»£å‘Šæœƒå“¡';
 
 
 CREATE TABLE `AdOrder` (
-  `orderSN` int NOT NULL AUTO_INCREMENT COMMENT '­q³æ¬y¤ô½s¸¹',
-  `adUserID` int NOT NULL COMMENT '·|­û¬y¤ô½s¸¹',
-  `block` int NOT NULL COMMENT 'ª©¦ì',
-  `time` timestamp NOT NULL COMMENT '¦¨¥ß®É¶¡',
-  `showTime` timestamp NOT NULL COMMENT '¶}©l®É¶¡',
-  `expiredTime` timestamp NOT NULL COMMENT 'µ²§ô®É¶¡',
+  `orderSN` int NOT NULL AUTO_INCREMENT COMMENT 'è¨‚å–®æµæ°´ç·¨è™Ÿ',
+  `adUserID` int NOT NULL COMMENT 'æœƒå“¡æµæ°´ç·¨è™Ÿ',
+  `block` int NOT NULL COMMENT 'ç‰ˆä½',
+  `time` timestamp NOT NULL COMMENT 'æˆç«‹æ™‚é–“',
+  `showTime` timestamp NOT NULL COMMENT 'é–‹å§‹æ™‚é–“',
+  `expiredTime` timestamp NOT NULL COMMENT 'çµæŸæ™‚é–“',
   PRIMARY KEY (`orderSN`),
   KEY `AdOrder_adUerID_FK` (`adUserID`),
   CONSTRAINT `AdOrder_adUerID_FK` FOREIGN KEY (`adUserID`) REFERENCES `admember` (`adUserID`)
-) COMMENT='¼s§i­q³æ';
+) COMMENT='å»£å‘Šè¨‚å–®';
 
 
 CREATE TABLE `AdPic` (
-  `adPicSN` int NOT NULL AUTO_INCREMENT COMMENT '¹Ï¤ù¬y¤ô½s¸¹',
-  `orderSN` int NOT NULL COMMENT '­q³æ¬y¤ô½s¸¹',
-  `pic` blob NOT NULL COMMENT '¼s§i¹Ï¤ù',
+  `adPicSN` int NOT NULL AUTO_INCREMENT COMMENT 'åœ–ç‰‡æµæ°´ç·¨è™Ÿ',
+  `orderSN` int NOT NULL COMMENT 'è¨‚å–®æµæ°´ç·¨è™Ÿ',
+  `pic` blob NOT NULL COMMENT 'å»£å‘Šåœ–ç‰‡',
   PRIMARY KEY (`adPicSN`),
   CONSTRAINT `AdPic_adPicSN_FK` FOREIGN KEY (`adPicSN`) REFERENCES `AdOrder` (`orderSN`)
-) COMMENT='¼s§i¹Ï¤ù';
+) COMMENT='å»£å‘Šåœ–ç‰‡';
 
--- --------------------------------------FORUM(¦³ÂI°İÃDÁÙ¦³4±i)----------------------------------------
+-- --------------------------------------FORUM(æœ‰é»å•é¡Œé‚„æœ‰4å¼µ)----------------------------------------
 
 
 CREATE TABLE `ArticleTitleOpt` (
-  `articleTitleOptSN` int NOT NULL AUTO_INCREMENT COMMENT 'µo¤å¿ï¶µ½s¸¹',
-  `articleTitleOptText` char(12) NOT NULL COMMENT '¿ï¶µ¤º®e',
+  `articleTitleOptSN` int NOT NULL AUTO_INCREMENT COMMENT 'ç™¼æ–‡é¸é …ç·¨è™Ÿ',
+  `articleTitleOptText` char(12) NOT NULL COMMENT 'é¸é …å…§å®¹',
   PRIMARY KEY (`articleTitleOptSN`)
-) COMMENT='µo¤å¼ĞÃD¿ï¶µ';
+) COMMENT='ç™¼æ–‡æ¨™é¡Œé¸é …';
 
 
 
--- --------------------------------------©t¨à­Ì QA MANAGER NEWS----------------------------------------
+-- --------------------------------------å­¤å…’å€‘ QA MANAGER NEWS----------------------------------------
 
 CREATE TABLE `QA` (
-  `questionSN` int NOT NULL AUTO_INCREMENT COMMENT 'QA§Ç¸¹',
-  `menu` char(1) NOT NULL COMMENT '¿ï³æ¤ÀÃş',
-  `submenu` char(2) NOT NULL COMMENT '¿ï³æ¤l¤ÀÃş',
-  `system` char(1) NOT NULL COMMENT '¨t²Î½s¸¹',
-  `question` varchar(300) NOT NULL COMMENT '°İÃD¤º®e',
-  `answer` varchar(300) NOT NULL COMMENT '¦^µª¤º®e',
-  `clicks` int NOT NULL COMMENT 'ÂIÀ»¦¸¼Æ',
-  `popularQuestion` tinyint NOT NULL COMMENT '¼öªù',
-  `popularQuestionSort` int DEFAULT NULL COMMENT '¼öªù°İÃD±Æ§Ç',
+  `questionSN` int NOT NULL AUTO_INCREMENT COMMENT 'QAåºè™Ÿ',
+  `menu` char(1) NOT NULL COMMENT 'é¸å–®åˆ†é¡',
+  `submenu` char(2) NOT NULL COMMENT 'é¸å–®å­åˆ†é¡',
+  `system` char(1) NOT NULL COMMENT 'ç³»çµ±ç·¨è™Ÿ',
+  `question` varchar(300) NOT NULL COMMENT 'å•é¡Œå…§å®¹',
+  `answer` varchar(300) NOT NULL COMMENT 'å›ç­”å…§å®¹',
+  `clicks` int NOT NULL DEFAULT '0' COMMENT 'é»æ“Šæ¬¡æ•¸',
+  `popularQuestion` tinyint NOT NULL COMMENT 'ç†±é–€',
+  `popularQuestionSort` int DEFAULT NULL COMMENT 'ç†±é–€å•é¡Œæ’åº',
   PRIMARY KEY (`questionSN`)
 ) COMMENT='Q&A' AUTO_INCREMENT=6001;
 
 
 CREATE TABLE `Manager` (
-  `account` varchar(50) NOT NULL COMMENT '±b¸¹',
-  `pwd` varchar(20) NOT NULL COMMENT '±K½X',
+  `account` varchar(50) NOT NULL COMMENT 'å¸³è™Ÿ',
+  `pwd` varchar(20) NOT NULL COMMENT 'å¯†ç¢¼',
   PRIMARY KEY (`account`)
-) COMMENT='ºŞ²zªÌ';
+) COMMENT='ç®¡ç†è€…';
 
 
 CREATE TABLE `News` (
-  `newsSN` int NOT NULL AUTO_INCREMENT COMMENT '·s»D½s¸¹',
-  `title` varchar(20) NOT NULL COMMENT '¼ĞÃD',
-  `content` text NOT NULL COMMENT '¤º¤å',
-  `image` longblob NOT NULL COMMENT '·Ó¤ù',
-  `newsDate` date NOT NULL COMMENT '·s»D¤é´Á',
-  `newsFrom` varchar(20) NOT NULL COMMENT '·s»D¨Ó·½',
-  `newsType` char(1) NOT NULL COMMENT '·s»DÃş«¬',
+  `newsSN` int NOT NULL AUTO_INCREMENT COMMENT 'æ–°èç·¨è™Ÿ',
+  `title` varchar(20) NOT NULL COMMENT 'æ¨™é¡Œ',
+  `content` text NOT NULL COMMENT 'å…§æ–‡',
+  `image` longblob NOT NULL COMMENT 'ç…§ç‰‡',
+  `newsDate` date NOT NULL COMMENT 'æ–°èæ—¥æœŸ',
+  `newsFrom` varchar(20) NOT NULL COMMENT 'æ–°èä¾†æº',
+  `newsType` char(1) NOT NULL COMMENT 'æ–°èé¡å‹',
   PRIMARY KEY (`newsSN`)
-) COMMENT='³Ì·s®ø®§' AUTO_INCREMENT = 500001;
+) COMMENT='æœ€æ–°æ¶ˆæ¯' AUTO_INCREMENT = 500001;

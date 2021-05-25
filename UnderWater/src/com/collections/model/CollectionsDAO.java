@@ -8,10 +8,10 @@ import util.Util;
 
 
 
-public class CollectionsDAO implements CollectionsDAO_interface{
+public class CollectionsDAO implements CollectionsDAO_interface {
 	
-//	insert, delete, findByUserID ¤w½T»{¥i¥H¦b DB °õ¦æ (·|¥dFK)	
-	// ¨â­Ó°İÃD 	1. ¨âÄæ¦ì¬O§_¸j½Æ¦X UK  2. ¥Ñcontroller§PÂ_­ninsertÁÙ¬Odelete?
+//	insert, delete, findByUserID å·²ç¢ºèªå¯ä»¥åœ¨ DB åŸ·è¡Œ (æœƒå¡FK)	
+	// å…©å€‹å•é¡Œ 	1. å…©æ¬„ä½æ˜¯å¦ç¶è¤‡åˆ UK  2. ç”± controller åˆ¤æ–·è¦ insert é‚„æ˜¯ delete ?
 	
 //	public static void main(String[] args) {		// FOR TEST
 //		CollectionsDAO dao = new CollectionsDAO();
@@ -32,7 +32,7 @@ public class CollectionsDAO implements CollectionsDAO_interface{
 	private static final String INSERT_STMT = "INSERT INTO Collections (userID, groupTourSN) VALUES (?, ?)";
 	private static final String DELETE_STMT = "DELETE FROM Collections where userID = ? and groupTourSN = ?";
 	private static final String GET_ALLGP_STMT = "SELECT userID, groupTourSN FROM Collections WHERE userID = ?";
-//	private static final String GET_ONE_STMT = "SELECT userID FROM Collections WHERE groupTourSN = ?";	// ¤£½T©w»İ¤£»İ­n
+//	private static final String GET_ONE_STMT = "SELECT userID FROM Collections WHERE groupTourSN = ?";	// ä¸ç¢ºå®šéœ€ä¸éœ€è¦
 
 
 	@Override
@@ -44,11 +44,8 @@ public class CollectionsDAO implements CollectionsDAO_interface{
 			Class.forName(Util.DRIVER);
 			con = DriverManager.getConnection(Util.URL, Util.USER, Util.PASSWORD);
 			ps = con.prepareStatement(INSERT_STMT);
-
-			ps = con.prepareStatement(INSERT_STMT);
 			ps.setInt(1, collectionsVO.getUserID());
-			ps.setInt(2, collectionsVO.getGroupTourSN());
-			
+			ps.setInt(2, collectionsVO.getGroupTourSN());			
 			ps.executeUpdate();
 
 		} catch (ClassNotFoundException ce) {
