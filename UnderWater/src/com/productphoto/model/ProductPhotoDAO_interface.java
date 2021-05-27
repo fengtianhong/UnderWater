@@ -1,5 +1,12 @@
 package com.productphoto.model;
 
-public interface ProductPhotoDAO_interface {
+import java.util.List;
 
+public interface ProductPhotoDAO_interface {
+	public void insert(ProductPhotoVO productPhotoVO);
+	public void delete(Integer photoSN);
+	public void update(ProductPhotoVO productPhotoVO);
+	public ProductPhotoVO getOneByPhotoSN(Integer photoSN);
+	public List<ProductPhotoVO> getAll();
+	
 }

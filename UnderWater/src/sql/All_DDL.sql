@@ -210,7 +210,7 @@ CREATE TABLE `Product` (
   `productQuantity` int NOT NULL COMMENT '商品數量',
   `productStatus` char(1) NOT NULL COMMENT '商品狀態',
   `productDetail` longtext NOT NULL COMMENT '商品說明',
-  `productCreateTime` timestamp NOT NULL COMMENT '上架時間',
+  `productCreateTime` timestamp NOT NULL DEFAULT NOW() COMMENT '上架時間',
   `productDiscount` tinyint(1) NOT NULL COMMENT '優惠品',
   `productPrime` tinyint(1) NOT NULL COMMENT '精選品',
   `ratingPoint` int NOT NULL COMMENT '評價總分數',
@@ -219,11 +219,15 @@ CREATE TABLE `Product` (
   CONSTRAINT `product_chk_1` CHECK ((`productPrice` > 0))
 ) COMMENT='商品';
 
+INSERT INTO Product (productClass,productName,productPrice,productQuantity,productStatus,
+productDetail,productDiscount,productPrime,ratingPoint,ratingNumber)
+values("蛙鞋","power牌鞋鞋",2000,100,0,"買到賺到",false,true,10,2);
+
 
 CREATE TABLE `OrderForProduct` (
   `orderSN` int NOT NULL AUTO_INCREMENT COMMENT '訂單編號',
   `userID` int NOT NULL COMMENT '會員編號',
-  `purchaseDate` timestamp NOT NULL COMMENT '購買時間',
+  `purchaseDate` timestamp NOT NULL DEFAULT NOW() COMMENT '購買時間',
   `totalPrice` int NOT NULL COMMENT '結帳總金額',
   `orderStatus` char(1) NOT NULL COMMENT '訂單狀態',
   `clearDate` timestamp NULL DEFAULT NULL COMMENT '完成時間',
@@ -232,6 +236,9 @@ CREATE TABLE `OrderForProduct` (
   CONSTRAINT `FK_OrderForProduct_userID` FOREIGN KEY (`userID`) REFERENCES `Member` (`userID`),
   CONSTRAINT `orderforproduct_chk_1` CHECK ((`totalPrice` > 0))
 ) COMMENT='商品訂單';
+
+INSERT INTO OrderForProduct (userID,totalPrice,orderStatus)
+values(2,100000000,1);
 
 
 CREATE TABLE `OrderList` (
@@ -249,6 +256,9 @@ CREATE TABLE `OrderList` (
   CONSTRAINT `orderlist_chk_1` CHECK ((`productPrice` > 0))
 ) COMMENT='商品訂單明細';
 
+INSERT INTO OrderList (productSN,orderSN,purchaseQuantity,productPrice,rating)
+values(1,1,10,2000,8);
+
 
 CREATE TABLE `ShoppingCar` (
   `shoppingCarSN` int NOT NULL AUTO_INCREMENT COMMENT '購物車編號',
@@ -265,6 +275,9 @@ CREATE TABLE `ShoppingCar` (
   CONSTRAINT `shoppingcar_chk_1` CHECK ((`productPrice` > 0)),
   CONSTRAINT `shoppingcar_chk_2` CHECK ((`totalPrice` > 0))
 ) COMMENT='購物車';
+
+INSERT INTO ShoppingCar (userID,productSN,purchaseQuantity,productPrice,totalPrice)
+values(1,1,3,2000,6000);
 
 
 CREATE TABLE `ProductPhoto` (
